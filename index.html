@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyrgyzstan Rankings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="sidebar-content">
+            <h3 data-i18n="categories-title">Категориялар</h3>
+            
+            <button class="side-link" onclick="changeCategory('sports')" data-i18n="cat-sports">Спорт</button>
+            <button class="side-link" onclick="changeCategory('kokboru')" data-i18n="cat-kokboru">Көк-бөрү</button>
+            <button class="side-link" onclick="changeCategory('music')" data-i18n="cat-music">Хит ырлар</button>
+            <button class="side-link" onclick="changeCategory('bloggers')" data-i18n="cat-bloggers">Блогерлер</button>
+            <button class="side-link" onclick="changeCategory('rich')" data-i18n="cat-rich">Байлар</button>
+            <button class="side-link" onclick="changeCategory('cyber')" data-i18n="cat-cyber">Киберспорт</button>
+            <button class="side-link" onclick="changeCategory('companies')" data-i18n="cat-companies">Компаниялар</button>
+            <button class="side-link" onclick="changeCategory('uni')" data-i18n="cat-uni">ЖОЖдор</button>
+            <button class="side-link" onclick="changeCategory('tiktok')" data-i18n="cat-tiktok">Тиктокерлер</button>
+            <button class="side-link" onclick="changeCategory('mma')" data-i18n="cat-mma">MMA</button>
+            <button class="side-link" onclick="changeCategory('football')" data-i18n="cat-football">Футбол</button>
+            <button class="side-link" onclick="changeCategory('volleyball')" data-i18n="cat-volleyball">Волейбол</button>
+            <button class="side-link" onclick="changeCategory('arm')" data-i18n="cat-arm">Кол күрөш</button>
+            <button class="side-link" onclick="changeCategory('boxing')" data-i18n="cat-boxing">Бокс</button>
+            <button class="side-link" onclick="changeCategory('cinema')" data-i18n="cat-cinema">Кино & Актёрлор</button>
+            <button class="side-link" onclick="changeCategory('it')" data-i18n="cat-it">IT & Стартаптар</button>
+            <button class="side-link" onclick="changeCategory('showmen')" data-i18n="cat-showmen">Шоумендер</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+            <div class="logo">KG Rankings</div>
+            
+            <div class="language-selector">
+                <button class="mode-btn" onclick="toggleLangMenu()">🌐</button>
+                <div id="langMenu" class="lang-dropdown" style="display: none;">
+                    <button onclick="changeLanguage('kg')">KG</button>
+                    <button onclick="changeLanguage('ru')">RU</button>
+                    <button onclick="changeLanguage('en')">EN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" data-i18n="search-placeholder" placeholder="Лидерлерди издөө..." onkeyup="searchTable()">
+        </div>
+    </header>
+
+    <main id="main">
+        <h2 id="category-title" style="text-align: center; margin-top: 10px;"></h2>
+        <section class="leaderboard-container">
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th data-i18n="th-name">Аты-жөнү</th>
+                        <th data-i18n="th-category">Багыты</th>
+                        <th data-i18n="th-score">Статус / Упай</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
